@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="home-page-container">
+	<div class="home-page-photo">
+		<img src="https://thecybersafetylady.com.au/wp-content/uploads/2018/10/Screen-Shot-2018-10-05-at-2.09.37-pm-600x900.png" alt="Instagram Photo" height="600" width="400">
+	</div>
+	<div class="register-form-container">
+		<img class="register-form-headingImg"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram Logo" height="65" width="190">
+		<h5 class="register-form-subheading">Sign up to see photos and videos</h5><h5 class="register-form-header-center">from your friends.</h5>
+		<button id="register-form-facebookbtn"class="btn btn-primary btn-block btn-size"><img src="https://banner2.kisspng.com/20180720/ggu/kisspng-computer-icons-logo-clip-art-bge-home-5b529920baff55.703420681532139808766.jpg" alt="Facebook Logo" height="20" width="30"/>&nbsp&nbsp&nbspLog in with Facebook</button>
+		<h5 class="register-form-text">OR</h5>
+		<form method= "POST" action="{{ url_for('explore')}}">
+
+			{{form.csrf_token}}
+
+			{{form.email(class="form-control1", placeholder= "Mobile Number or Email" )}}<br>
+
+			{{form.fullname(class="form-control1", placeholder= "Full Name" )}}<br>
+
+			{{form.username(class="form-control1", placeholder= "Username" )}}<br>
+
+			{{form.password(class="form-control12",placeholder= "Password" )}}<br>
+
+			<button class="btn btn-primary btn-block btn-size">Sign Up</button><br>
+			<h5 class="register-form-footer">By signing up, you agree to our<br> <strong>Terms , Data Policy</strong> and <strong>Cookies<br>Policy .</strong></h5>
+			
+		</form>
+	</div>
+	<div class="register-form-container2">
+		<p class="login-link">Have an account?&nbsp&nbsp<a href="#">Log in</a></p>
+	</div>
+	<div class="moreText-container">
+		<p class="moreText">Get the app.</p>
+	</div>
+	<div class="download-links-container">
+		<img src="http://pluspng.com/img-png/download-on-app-store-png-click-the-qr-code-to-show-the-download-link-800.png" alt="Download on the app store." height="40" width="130">
+		<img src="https://www.designpieces.com/wp-content/uploads/2016/02/google-play-badge.png" alt="Get it on google play." height="40" width="130>"
+	</div>
+</div>
+
+
+{% endblock %}
